@@ -19,20 +19,23 @@ for that audience.
 
 User-invoked commands:
 
-- **`/start`** — runs the app in the preview panel. Always start servers via the Claude
+- **`/app-start`** — runs the app in the preview panel. Always start servers via the Claude
   Preview tool (`preview_start`, config name `web` in `.claude/launch.json`) — **never**
   `npm run dev` in Bash.
-- **`/init-app <idea>`** — interviews the user (Round 1 framing + Round 2 idea-specific +
+- **`/app-init <idea>`** — interviews the user (Round 1 framing + Round 2 idea-specific +
   a mandatory **design-direction** step), writes a Russian plan to `.claude/app-plan.md`
   (incl. `## Дизайн`), shows it via ExitPlanMode, and on approval builds the app, checking
   off `## Прогресс` steps.
-- **`/build`** — resumes/finishes the build from `.claude/app-plan.md` (resumable via checkboxes).
-- **`/push`** — commits and pushes to GitHub in one step. First run sets up the repo
+- **`/app-build`** — resumes/finishes the build from `.claude/app-plan.md` (resumable via checkboxes).
+- **`/app-push`** — commits and pushes to GitHub in one step. First run sets up the repo
   (via `gh` CLI, or an existing repo URL); after that it just publishes. No git jargon to the user.
+- **`/app-change-text <new text>`** — quick in-place text edit: the user selects a text element in
+  the live preview on the right and types the replacement; swaps the old string for the new one in
+  the source via a single find-and-replace. No checks, no rebuild — fast and cheap.
 
 Background knowledge skills (auto-invoked, hidden from the `/` menu):
 
-- **`designer`** — design directions, tokens, accessibility; powers the `/init-app` design step
+- **`designer`** — design directions, tokens, accessibility; powers the `/app-init` design step
   (incl. «как на конкретном сайте» via `WebFetch`, recreating aesthetic only, never copying content).
 - **`developer`** — Next.js/React/TS/Tailwind engineering practices for clean, robust features.
 
@@ -48,9 +51,9 @@ Background knowledge skills (auto-invoked, hidden from the `/` menu):
 ## Defaults
 
 - **Database** for data-backed apps: **Supabase** (Postgres cloud). App runs locally; DB is
-  cloud. See `.claude/skills/init-app/playbook-supabase.md` for the exact MCP sequence.
+  cloud. See `.claude/skills/app-init/playbook-supabase.md` for the exact MCP sequence.
 - **Integrations**: e-mail → Resend, notifications → Telegram Bot API, payments → Stripe.
-  See `.claude/skills/init-app/playbook-integrations.md`.
+  See `.claude/skills/app-init/playbook-integrations.md`.
 - Keep dependencies minimal so `npm install` stays fast.
 
 ## Security (non-negotiable)
@@ -69,6 +72,6 @@ deployed to Vercel and Analytics is enabled in the Vercel dashboard.
 
 ## Out of scope (for now)
 
-One-command deploy/hosting to a live URL, and CI. Publishing source to GitHub (`/push`) and
+One-command deploy/hosting to a live URL, and CI. Publishing source to GitHub (`/app-push`) and
 Vercel Analytics are in scope; everything still runs locally. Architecture leaves room to add
 a deploy skill later.

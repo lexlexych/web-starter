@@ -13,7 +13,7 @@ export default function Home() {
         {/* Command cards */}
         <div className="mt-14 grid w-full grid-cols-1 gap-5 sm:grid-cols-2">
           <CommandCard
-            command="/start"
+            command="/app-start"
             title="Посмотреть демо"
             description="Запускает эту страницу в окне предпросмотра справа, чтобы вы увидели, как всё работает вживую."
             accent="cyan"
@@ -34,7 +34,7 @@ export default function Home() {
             }
           />
           <CommandCard
-            command="/init-app"
+            command="/app-init"
             title="Создать своё приложение"
             description="Задаёт пару простых вопросов о вашей идее, составляет план и собирает приложение под вас."
             accent="violet"
@@ -67,7 +67,7 @@ export default function Home() {
         >
           <span>Начните прямо сейчас — напишите в чате</span>
           <code className="rounded-md border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-aurora-violet">
-            /init-app
+            /app-init
           </code>
         </div>
       </section>

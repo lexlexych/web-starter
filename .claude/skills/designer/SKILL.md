@@ -4,7 +4,7 @@ description: >-
   Design expertise for building beautiful, on-brand, accessible UI. Auto-invoke
   whenever choosing a visual direction, styling pages/components, picking colors,
   fonts, spacing, or polishing the look of any app built in this starter — and when
-  /init-app proposes design directions for the user to choose from.
+  /app-init proposes design directions for the user to choose from.
 user-invocable: false
 allowed-tools:
   - Read
@@ -36,9 +36,9 @@ Store tokens as CSS variables in `app/globals.css` and Tailwind theme extensions
 `tailwind.config.ts` — the same pattern the landing page already uses (`.glass`,
 `.gradient-text`, `--ink`, `aurora.*`). Reuse those utilities; extend, don't fight them.
 
-## Generating design options for the user (used by /init-app)
+## Generating design options for the user (used by /app-init)
 
-When `/init-app` reaches the design step, propose **3 directions that genuinely fit the app's
+When `/app-init` reaches the design step, propose **3 directions that genuinely fit the app's
 purpose and mood** (a clinic ≠ a nightclub), each with a short, warm Russian label + one-line
 feel. Pull archetypes and their palette/type/mood cues from `design-directions.md`. Always add a
 4th option: «Как на конкретном сайте (укажу ссылку)» — handled via `design-from-url.md`.

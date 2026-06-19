@@ -1,9 +1,9 @@
 ---
-name: start
+name: app-start
 description: >-
   Run the current web app and open it in the live preview panel on the right.
   Запускает приложение и открывает его в окне предпросмотра справа.
-  Use when the user types /start or asks to "run", "launch", "open", "show",
+  Use when the user types /app-start or asks to "run", "launch", "open", "show",
   "preview", "запусти", "покажи демо", "открой приложение".
 argument-hint: ""
 disable-model-invocation: true
@@ -18,7 +18,7 @@ allowed-tools:
   - mcp__Claude_Preview__preview_stop
 ---
 
-# /start — launch the app in the preview panel
+# /app-start — launch the app in the preview panel
 
 Goal: get the running web app into the preview panel on the right with the least
 friction, then confirm it to the user **in Russian**. The user is non-technical —
@@ -44,12 +44,12 @@ Russian sentences.
 
 4. **Tell the user, in Russian**, something warm and short, e.g.:
    «Готово! Ваше приложение открылось справа 👉 Покрутите его, а когда захотите сделать
-   своё — напишите `/init-app` и опишите идею.»
+   своё — напишите `/app-init` и опишите идею.»
 
 ## Troubleshooting (translate to friendly Russian, don't dump errors)
 
 - **`npm` / Node.js not found** → "Похоже, не установлен Node.js. Скачайте его с
-  nodejs.org (кнопка LTS), установите и снова напишите `/start`."
+  nodejs.org (кнопка LTS), установите и снова напишите `/app-start`."
 - **Port 3000 busy** → the preview tool handles this; if it still fails, suggest closing
-  other running apps and retrying `/start`.
+  other running apps and retrying `/app-start`.
 - **Blank preview** → wait a few seconds and screenshot again; first build is slower.

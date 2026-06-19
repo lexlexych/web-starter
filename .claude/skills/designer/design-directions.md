@@ -1,7 +1,7 @@
 # Design direction catalog (archetypes)
 
 A palette of aesthetic archetypes to draw on when generating the 3 tailored options in the
-`/init-app` design step. **Don't just list these blindly** — pick and rename the 3 that fit the
+`/app-init` design step. **Don't just list these blindly** — pick and rename the 3 that fit the
 specific app's purpose and audience, with warm Russian labels. Each archetype below has a mood,
 palette cue, typography cue, and Tailwind/CSS hint.
 

@@ -15,7 +15,7 @@ is load-bearing.
      and give them this 3-step Russian note:
      > Чтобы включить базу данных позже: 1) заведите бесплатный аккаунт на supabase.com;
      > 2) создайте токен на supabase.com/dashboard/account/tokens; 3) вставьте его в `.env.local`
-     > как `SUPABASE_ACCESS_TOKEN` и напишите `/build`.
+     > как `SUPABASE_ACCESS_TOKEN` и напишите `/app-build`.
 
 ## 1. Cost gate (mandatory — cannot be skipped)
 
@@ -93,4 +93,4 @@ Run `mcp__supabase__get_advisors(type:"security")` after migrations. Fix every f
 
 If DB is unavailable, build the same screens against a typed in-memory/JSON mock in
 `lib/mock-data.ts` so the app fully runs locally. Keep the data shapes identical to the
-planned schema so swapping in Supabase later (`/build`) is a small change.
+planned schema so swapping in Supabase later (`/app-build`) is a small change.

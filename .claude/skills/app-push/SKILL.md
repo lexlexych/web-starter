@@ -1,9 +1,9 @@
 ---
-name: push
+name: app-push
 description: >-
   Save the project to GitHub: stage, commit, and push in one step. Сохраняет проект
   на GitHub (commit + push) одной командой. On first run, sets up the GitHub repo;
-  afterwards just publishes the latest changes. Use when the user types /push or asks
+  afterwards just publishes the latest changes. Use when the user types /app-push or asks
   to "save / publish / upload to GitHub", "сохрани на гитхаб", "опубликуй", "залей".
 argument-hint: ""
 disable-model-invocation: true
@@ -15,7 +15,7 @@ allowed-tools:
   - Bash(gh *)
 ---
 
-# /push — publish the project to GitHub
+# /app-push — publish the project to GitHub
 
 Goal: let a **non-technical, Russian-speaking** user save their work to GitHub without ever
 touching git. Talk only in friendly Russian; never show raw git/gh output or jargon. Translate
@@ -37,7 +37,7 @@ that, just publish.
   `gh auth login` and tell the user a browser window will open to sign in. If `gh` is not
   installed, you can still push over HTTPS (Git Credential Manager, bundled with Git for
   Windows, opens a browser on first push); if even that fails, explain in Russian how to install
-  GitHub CLI: `winget install --id GitHub.cli`, then retry `/push`.
+  GitHub CLI: `winget install --id GitHub.cli`, then retry `/app-push`.
 
 ## B. First run — connect a GitHub repo
 

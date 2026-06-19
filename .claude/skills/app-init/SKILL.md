@@ -1,10 +1,10 @@
 ---
-name: init-app
+name: app-init
 description: >-
   Design and build a new web app from a plain-language idea through a short
   multiple-choice interview (in Russian). Проектирует и собирает приложение по
   вашему описанию: задаёт простые вопросы, составляет план и создаёт приложение.
-  Use when the user types /init-app or asks to "create / build / make an app or
+  Use when the user types /app-init or asks to "create / build / make an app or
   site", "создай приложение", "сделай сайт", "хочу приложение для…".
 argument-hint: <опишите ваше приложение, напр. сайт бронирования столиков>
 disable-model-invocation: true
@@ -38,7 +38,7 @@ allowed-tools:
   - mcp__supabase__search_docs
 ---
 
-# /init-app — interview, plan, and build a web app
+# /app-init — interview, plan, and build a web app
 
 You are guiding a **non-technical, Russian-speaking** user. Golden rules:
 
@@ -129,7 +129,7 @@ steps, e.g.:
 - [ ] 2. Страницы: главная, …
 - [ ] 3. База данных Supabase (проект + таблицы + защита доступа)
 - [ ] 4. Интеграции: …
-- [ ] 5. Проверка и запуск (/start)
+- [ ] 5. Проверка и запуск (/app-start)
 ```
 
 Then call **ExitPlanMode** so the user sees the native approve/reject UI. The plan text
@@ -144,9 +144,9 @@ tokens in `app/globals.css` + `tailwind.config.ts`, then build screens from thos
 resumable. Keep the user informed in short Russian updates («Подбираю стиль…», «Делаю
 страницы…», «Создаю базу данных, это пара минут…»).
 
-When done, run `/start` (or call `preview_start` with `name: "web"`) so the user sees the
+When done, run `/app-start` (or call `preview_start` with `name: "web"`) so the user sees the
 result, and tell them in Russian what was built and what (if anything) they still need to
-provide (e.g. an API key). If the build is interrupted, the user can type `/build` to resume.
+provide (e.g. an API key). If the build is interrupted, the user can type `/app-build` to resume.
 
 ## Never-stuck guarantees (summary)
 

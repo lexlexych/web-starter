@@ -1,10 +1,10 @@
 ---
-name: build
+name: app-build
 description: >-
   Resume or finish building the app from the saved plan (.claude/app-plan.md).
   Продолжает сборку приложения по сохранённому плану. Use when the user types
-  /build, or asks to "continue / finish building", "продолжи сборку", "доделай
-  приложение", especially after an interrupted /init-app run.
+  /app-build, or asks to "continue / finish building", "продолжи сборку", "доделай
+  приложение", especially after an interrupted /app-init run.
 argument-hint: ""
 disable-model-invocation: true
 allowed-tools:
@@ -35,15 +35,15 @@ allowed-tools:
   - mcp__supabase__search_docs
 ---
 
-# /build — execute the saved plan
+# /app-build — execute the saved plan
 
-Resumes the build defined in `.claude/app-plan.md`. Same audience and rules as `/init-app`:
+Resumes the build defined in `.claude/app-plan.md`. Same audience and rules as `/app-init`:
 **Russian to the user, no code/jargon/stack traces, always a recommended default.**
 
 ## Steps
 
 1. **Read `.claude/app-plan.md`.** If it doesn't exist, don't error — tell the user in
-   Russian: «Пока нет плана для сборки. Напишите `/init-app` и опишите вашу идею — я составлю
+   Russian: «Пока нет плана для сборки. Напишите `/app-init` и опишите вашу идею — я составлю
    план, а потом соберу приложение.» Then stop.
 
 2. **Find the first unchecked step** in the `## Прогресс` section (`- [ ]`). Everything above
@@ -64,5 +64,5 @@ Resumes the build defined in `.claude/app-plan.md`. Same audience and rules as `
 
 ## If something fails
 
-Translate the problem into friendly Russian, leave the current step unchecked (so `/build`
+Translate the problem into friendly Russian, leave the current step unchecked (so `/app-build`
 can retry it), and suggest the simplest next action. Never surface raw errors.

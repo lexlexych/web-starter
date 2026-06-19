@@ -20,10 +20,10 @@ with a working Next.js + Tailwind base — **extend it, don't recreate it.**
   `app/globals.css`. Mobile-first; everything must look good on a narrow viewport.
 - Real, sensible Russian content — never lorem ipsum. Use believable example data.
 
-## The launch config (do not break /start)
+## The launch config (do not break /app-start)
 
 `.claude/launch.json` defines the preview server named `web` → `npm run dev` on port 3000.
-Keep the dev command and port stable so `/start` keeps working. If you add a second server
+Keep the dev command and port stable so `/app-start` keeps working. If you add a second server
 later, add a new named configuration rather than editing `web`.
 
 ## Environment & secrets (critical)

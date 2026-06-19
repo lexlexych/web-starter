@@ -45,4 +45,4 @@ Read this for each integration chosen in Q3. Rules for all of them:
 
 Mention in the final Russian summary exactly which `.env.local` keys (if any) the user must
 fill to switch the feature from «заглушка» to live, and that they can just edit `.env.local`
-and restart with `/start`.
+and restart with `/app-start`.

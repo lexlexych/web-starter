@@ -1,6 +1,6 @@
 # Design inspired by a specific website
 
-Used when the user picks «Как на конкретном сайте (укажу ссылку)» in the `/init-app` design
+Used when the user picks «Как на конкретном сайте (укажу ссылку)» in the `/app-init` design
 step and provides a URL. Goal: capture the **design language** of that site and apply it to the
 user's own app.
 

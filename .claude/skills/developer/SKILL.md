@@ -54,6 +54,6 @@ Pairs with `designer/SKILL.md` (how it looks) and `init-app/conventions.md` (pro
 ## Always verify before declaring done
 
 1. `npm run build` compiles with no type errors, **or** the dev server compiles clean.
-2. Launch via the preview (`/start` / `preview_start` name `web`) and check the changed screens
+2. Launch via the preview (`/app-start` / `preview_start` name `web`) and check the changed screens
    (desktop + narrow viewport); fix console/network errors.
 3. Summarize for the user in plain Russian — what changed and how to see it — no code dumps.
