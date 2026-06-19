@@ -27,8 +27,11 @@ User-invoked commands:
   (incl. `## Дизайн`), shows it via ExitPlanMode, and on approval builds the app, checking
   off `## Прогресс` steps.
 - **`/app-build`** — resumes/finishes the build from `.claude/app-plan.md` (resumable via checkboxes).
-- **`/app-push`** — commits and pushes to GitHub in one step. First run sets up the repo
-  (via `gh` CLI, or an existing repo URL); after that it just publishes. No git jargon to the user.
+- **`/app-push`** — commits and pushes to GitHub in one step, using **plain git on the command
+  line only** (never installs any tooling). First run asks the user for their existing GitHub repo
+  URL (with an example) and has them sign in through the browser window on the first push; after
+  that it just publishes. Every push also prepends an entry to the change log (see below). No git
+  jargon to the user.
 - **`/app-change-text <new text>`** — quick in-place text edit: the user selects a text element in
   the live preview on the right and types the replacement; swaps the old string for the new one in
   the source via a single find-and-replace. No checks, no rebuild — fast and cheap.
@@ -38,6 +41,12 @@ Background knowledge skills (auto-invoked, hidden from the `/` menu):
 - **`designer`** — design directions, tokens, accessibility; powers the `/app-init` design step
   (incl. «как на конкретном сайте» via `WebFetch`, recreating aesthetic only, never copying content).
 - **`developer`** — Next.js/React/TS/Tailwind engineering practices for clean, robust features.
+
+## Change log (always read for context)
+
+[`CHANGELOG.md`](CHANGELOG.md) is the project's change journal, in Russian, newest entry on top.
+`/app-push` prepends an entry on every save describing what changed. **Skim the top of this file at
+the start of work** to know the recent history, and keep its format when anything else writes to it.
 
 ## Stack & commands
 
